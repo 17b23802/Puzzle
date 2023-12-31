@@ -1,0 +1,123 @@
+<!-- To do:
+  Answers = 4,1,45,press the windows key then move your mouse to "the end", touch the very right wall
+  When I oiginally coded this there was no van in the bottom right corner, I have no idea why that's there
+-->
+<html>
+    <head>
+        <script src="Questions.js"></script>
+        <link rel="stylesheet" type="text/css" href="Style.css">
+        <title>The Master Puzzles</title>
+    </head>
+    <body class="Puzzle"  onkeydown="Input(event)" onkeyup="Change(event)">  
+        <img class="lives1" id="lives1" src="1 life.png">
+        <img class="lives2" id="lives2" src="2 lives.png">
+        <img class="lives3" id="lives3" src="3 lives.png">
+
+        <div id="youlose" class="youlose">
+            <h1>Game over!</h1>
+            <button onclick="Reset()">Retry?</button>
+        </div> 
+
+        <div id="page1" class="page1">
+            <h1>Welcome to the puzzle!</h1>
+            <h2>How many holes in a polo?</h2>
+            <button onclick="Wrong()" class="page1-enter1">1</button>
+            <button onclick="Wrong()" class="page1-enter2">2</button>
+            <button onclick="Wrong()" class="page1-enter3">3</button>
+            <button onclick="Qone()" class="page1-enter4">4</button>
+        </div>
+
+        <div id="page2" class="page2 input"> 
+            <h3 class="page2-header">
+                1 = 5
+                <br><br>
+                2 = 15
+                <br><br>
+                3 = 215
+                <br><br>
+                4 = 3215
+                <br><br>
+                5 = 
+            </h3> 
+
+            <form onSubmit = "return Qtwo()">
+                <input id = "page2-input" class="page2-input">
+                <input type = "submit" value = "Enter" class="page2-enter">
+            </form>
+        </div>
+
+        <div id="page3" class="page3">
+            <h3 class="page2-header">
+                1+1+1+1+1+1+1+1+1
+                <br><br>
+                1+1+1+1+1+1+1+1+1
+                <br><br>
+                1+1+1+1+1+1+1+1+1
+                <br><br>
+                =  
+            </h3>
+
+            <form onSubmit = "return Qthree()">
+                <input id = "page3-input" class="page3-input">
+                <input type = "submit" value = "Enter" class="page3-enter">
+            </form>
+        </div>
+
+        <div id="page4" class="page4">
+            <div id="page42" class="page42">
+                <h3>Hover your mouse over the blue dot</h3>
+                <div id="page420" class="page420" onmouseover="QfourPuzzle()"></div>
+            </div>
+            
+
+            <h3 class="page4-header" id="page4-header">Don't touch the red, get to <a onclick="Qfour()">the end!</a></h3>
+
+            <div id="page4-puzzle" class="page4-puzzle">
+                <div id="page4-backdrop" class="page4-backdrop" onmousedown="Click()"></div>
+                <div class="page4-maze-1" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-2" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-3" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-4" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-5" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-6" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-7" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-8" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-9" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-10" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-11" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-12" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-13" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-14" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-15" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-16" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-17" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-18" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-19" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-20" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-21" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-22" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-23" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-24" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-25" onmouseover="QfourWrong()"></div>
+                <div class="page4-maze-26" onmouseover="QfourWrong()"></div>
+                <div id="page4-fake" class="page4-fake" onmouseover="QfourWrong()"></div>
+            </div>
+        </div>
+
+        <div id="page5" class="page5">
+            <div class="page5-border" id="page5-border"></div>
+            <div class="page5-background" id="page5-background"></div>
+            <div id="page5-square" class="page5-square"></div>
+            <div id="page5-platform-1" class="page5-platform-1"></div>
+            <div id="page5-platform-2" class="page5-platform-2"></div>
+            <div id="page5-platform-3" class="page5-platform-3"></div>
+            <div id="page5-platform-4" class="page5-platform-4"></div>
+            <div id="page5-platform-5" class="page5-platform-5"></div>
+            <div id="page5-platform-6" class="page5-platform-6"></div>
+            <div id="page5-platform-7" class="page5-platform-7"></div>
+            <div id="page5-platform-8" class="page5-platform-8"></div>
+            <h1 id="page5-header" class="page5-header"> Use arrow keys to move, get to the end</h1>
+            <h1 id="page5-retry" class="page5-retry"> To retry, press space.</h1>
+        </div>
+    </body>
+</html>
